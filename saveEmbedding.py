@@ -2,7 +2,8 @@ import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModel
 
-torch.set_num_threads(12)  # Adjust based on your CPU
+# Adjust based on your CPU
+torch.set_num_threads(12)
 
 df = pd.read_csv("finalDataset.csv")
 
