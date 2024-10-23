@@ -2,26 +2,16 @@ import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from sklearn.preprocessing import LabelEncoder
-from torch.utils.data import DataLoader, Dataset
+from sklearn.model_selection import train_test_split
+from torch.utils.data import Dataset, DataLoader
+from torch import nn
 from torch.optim import AdamW
-from transformers import get_linear_schedule_with_warmup
-torch.set_num_threads(12)
+from tqdm import tqdm
 
-# 1. Load the dataset
-df = pd.read_csv("finalDataset.csv")
-
-X = df[['answer', 'ConstructName', 'QuestionText']].astype(str)
-X = "answer: " + X['answer'] + " " + "ConstructName: " + X['ConstructName'] + " " + "QuestionText: " + X['QuestionText']
-Y = df['MisconceptionName']
-
-# Encode the target labels
-label_encoder = LabelEncoder()
-Y = label_encoder.fit_transform(Y)  # Convert to numerical labels
-
-# 2. Define a Dataset class
-class TextDataset(Dataset):
+# Define a custom Dataset class
+class SentimentAnalysisDataset(Dataset):
     def __init__(self, texts, labels, tokenizer, max_len=512):
-        self.texts = texts
+        self.texts = texts.tolist()
         self.labels = labels
         self.tokenizer = tokenizer
         self.max_len = max_len
@@ -33,79 +23,145 @@ class TextDataset(Dataset):
         text = self.texts[index]
         label = self.labels[index]
 
-        encoding = self.tokenizer(
+        encoding = self.tokenizer.encode_plus(
             text,
             truncation=True,
-            padding='max_length',
             max_length=self.max_len,
+            add_special_tokens=True,
+            padding='max_length',
+            return_attention_mask=True,
             return_tensors='pt'
         )
 
         return {
-            'input_ids': encoding['input_ids'].squeeze(),
-            'attention_mask': encoding['attention_mask'].squeeze(),
-            'labels': torch.tensor(label, dtype=torch.long)
+            'input_ids': encoding['input_ids'].squeeze(0),
+            'attention_mask': encoding['attention_mask'].squeeze(0),
+            'label': torch.tensor(label, dtype=torch.long)
         }
 
-# Initialize the tokenizer and model
-tokenizer = AutoTokenizer.from_pretrained("tbs17/MathBERT")
-model = AutoModelForSequenceClassification.from_pretrained("tbs17/MathBERT", num_labels=len(label_encoder.classes_))
 
-# 3. Create Dataset and DataLoader
-dataset = TextDataset(X.tolist(), Y, tokenizer)
-data_loader = DataLoader(dataset, batch_size=32, shuffle=True)
+def prepare_data(file_path):
+    # Load the dataset
+    df = pd.read_csv(file_path)
+    X = df[['answer', 'ConstructName', 'QuestionText']].astype(str)
+    X = "answer: " + X['answer'] + " " + "ConstructName: " + X['ConstructName'] + " " + "QuestionText: " + X[
+        'QuestionText']
+    Y = df['MisconceptionName']
 
-# 4. Set up optimizer, loss, and scheduler
-optimizer = AdamW(model.parameters(), lr=2e-5)
-epochs = 10
-total_steps = len(data_loader) * epochs
+    # Encode the labels
+    label_encoder = LabelEncoder()
+    Y = label_encoder.fit_transform(Y)
 
-scheduler = get_linear_schedule_with_warmup(
-    optimizer,
-    num_warmup_steps=0,
-    num_training_steps=total_steps
-)
+    return train_test_split(X, Y, test_size=0.1, random_state=42), label_encoder
 
-loss_fn = torch.nn.CrossEntropyLoss()
 
-# 5. Define training loop
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
+def create_dataloaders(train_x, train_y, dev_x, dev_y, tokenizer, batch_size=32):
+    # Prepare datasets
+    train_dataset = SentimentAnalysisDataset(train_x, train_y, tokenizer)
+    dev_dataset = SentimentAnalysisDataset(dev_x, dev_y, tokenizer)
 
-def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler, n_examples):
-    model.train()
+    # Create dataloaders
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    dev_dataloader = DataLoader(dev_dataset, batch_size=batch_size // 2, shuffle=False)
 
-    losses = 0
-    correct_predictions = 0
+    return train_dataloader, dev_dataloader
 
-    for batch in data_loader:
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
-        labels = batch['labels'].to(device)
 
-        optimizer.zero_grad()
+def train_and_evaluate(train_dataloader, dev_dataloader, model, device, epochs=10, learning_rate=2e-5):
+    optimizer = AdamW(model.parameters(), lr=learning_rate)
+    loss_fn = nn.CrossEntropyLoss()
 
-        outputs = model(input_ids=input_ids, attention_mask=attention_mask)
-        logits = outputs.logits
+    best_loss = float('inf')
+    model.to(device)
 
-        _, preds = torch.max(logits, dim=1)
-        loss = loss_fn(logits, labels)
+    num_training_steps = epochs * len(train_dataloader)
+    with tqdm(total=num_training_steps, desc="Fine-tuning") as pbar:
+        for epoch in range(epochs):
+            # Training phase
+            model.train()
+            train_loss = 0
 
-        loss.backward()
-        optimizer.step()
-        scheduler.step()
+            for batch in train_dataloader:
+                input_ids = batch['input_ids'].to(device)
+                attention_mask = batch['attention_mask'].to(device)
+                labels = batch['label'].to(device)
 
-        losses += loss.item()
-        correct_predictions += torch.sum(preds == labels)
+                optimizer.zero_grad()
+                outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+                loss = loss_fn(outputs.logits, labels)
+                loss.backward()
+                optimizer.step()
 
-    return correct_predictions.double() / n_examples, losses / len(data_loader)
+                train_loss += loss.item()
+                pbar.update(1)
 
-# 6. Training Loop
-for epoch in range(epochs):
-    print(f"Epoch {epoch + 1}/{epochs}")
-    train_acc, train_loss = train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler, len(df))
-    print(f"Train loss {train_loss} accuracy {train_acc}")
+            avg_train_loss = train_loss / len(train_dataloader)
+            print(f"Epoch {epoch + 1}/{epochs}, Train Loss: {avg_train_loss}")
 
-# 7. Save the fine-tuned model
-model.save_pretrained("finetuned_mathbert")
-tokenizer.save_pretrained("finetuned_mathbert")
+            # Evaluation phase
+            model.eval()
+            dev_loss = 0
+
+            with torch.no_grad():
+                for batch in dev_dataloader:
+                    input_ids = batch['input_ids'].to(device)
+                    attention_mask = batch['attention_mask'].to(device)
+                    labels = batch['label'].to(device)
+
+                    outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+                    loss = loss_fn(outputs.logits, labels)
+                    dev_loss += loss.item()
+
+            avg_dev_loss = dev_loss / len(dev_dataloader)
+            print(f"Epoch {epoch + 1}/{epochs}, Validation Loss: {avg_dev_loss}")
+
+            # Save the best model checkpoint
+            if avg_dev_loss < best_loss:
+                best_loss = avg_dev_loss
+                best_model = model.state_dict()
+                torch.save(best_model, 'best_model_checkpoint.pth')
+                print(f"Best model saved with Validation Loss: {avg_dev_loss}")
+
+
+def save_embeddings(dataloader, model, device, output_file="fine_tuned_embeddings.pt"):
+    model.eval()
+    embeddings_list = []
+
+    with torch.no_grad():
+        for batch in tqdm(dataloader, desc="Saving Embeddings"):
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+            embeddings = outputs.hidden_states[-1][:, 0,
+                         :]  # Take the [CLS] token's embedding from the last hidden layer
+            embeddings_list.append(embeddings.cpu())
+
+    embeddings = torch.cat(embeddings_list, dim=0)
+    torch.save(embeddings, output_file)
+    print(f"Embeddings saved to {output_file}")
+
+
+if __name__ == "__main__":
+    # Set device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    # Prepare data and dataloaders
+    (train_x, dev_x, train_y, dev_y), label_encoder = prepare_data("finalDataset.csv")
+
+    # Initialize tokenizer and model
+    tokenizer = AutoTokenizer.from_pretrained('tbs17/MathBERT')
+    model = AutoModelForSequenceClassification.from_pretrained(
+        'tbs17/MathBERT',
+        num_labels=len(label_encoder.classes_),
+        output_hidden_states=True  # Enable output of hidden states
+    )
+
+    # Create dataloaders
+    train_dataloader, dev_dataloader = create_dataloaders(train_x, train_y, dev_x, dev_y, tokenizer, batch_size=32)
+
+    # Train and evaluate
+    train_and_evaluate(train_dataloader, dev_dataloader, model, device, epochs=10, learning_rate=2e-5)
+
+    # Save the fine-tuned embeddings
+    save_embeddings(dev_dataloader, model, device, output_file="fine_tuned_embeddings.pt")
