@@ -34,6 +34,7 @@ if __name__ == "__main__":
         model_input = data_preparer.df.iloc[index]
         prompt = generate_prompt(model_input)
         ground_truth = data_preparer.df.iloc[index]['MisconceptionName']
+        print('hi im here')
         response = pipe(prompt, max_length=1000, num_return_sequences=1)
         generated_text = response[0]['generated_text']
         results.append({
