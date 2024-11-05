@@ -6,7 +6,8 @@ from tqdm import tqdm
 from torch.cuda.amp import autocast
 
 # Add your project directory to the system path
-sys.path.append("C:/Users/jiaru/OneDrive/Desktop/544-Project")
+parent_str = "C:/Users/jiaru/OneDrive/Desktop/544-Project/"
+sys.path.append(parent_str)
 from data_preparer import DataPreparer
 
 # Set logging to ignore warnings
@@ -16,8 +17,10 @@ logging.set_verbosity_error()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load the tokenizer and model from the local directory
-model_path = r"C:\Users\jiaru\OneDrive\Desktop\544-Project\converted_llama"
-file_path = r"C:\Users\jiaru\OneDrive\Desktop\544-Project\finalDataset.csv"
+model_path = parent_str + "converted_llama"
+# model_path = 'EleutherAI/llemma_7b'
+file_path = parent_str + "finalDataset.csv"
+dir_path = parent_str + "evaluating_pipeline/zero_shot_model_responses.csv"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(model_path).to(device)
 if tokenizer.pad_token is None:
@@ -48,7 +51,17 @@ def generate_text_batch(prompts, max_length=1000):
             )
     
     # Decode all generated sequences in the batch
-    return [tokenizer.decode(output, skip_special_tokens=True) for output in outputs]
+    generated_texts = [tokenizer.decode(output, skip_special_tokens=True) for output in outputs]
+    
+    # Extract the model's response by removing the prompt part
+    responses = []
+    for prompt, generated_text in zip(prompts, generated_texts):
+        # Find where the prompt ends and the response begins
+        response = generated_text[len(prompt):].strip()  # Get text after the prompt
+        responses.append(response)
+    
+    return responses
+
 
 if __name__ == "__main__":
     # Initialize DataPreparer and load data
@@ -79,7 +92,7 @@ if __name__ == "__main__":
     
     # Save the results DataFrame as a CSV file
     results_df = pd.DataFrame(results)
-    results_df.to_csv("../evaluating pipeline/model_responses.csv", index=False)
+    results_df.to_csv(dir_path, index=False)
     
     print("Responses saved to model_responses.csv")
 
