@@ -17,12 +17,13 @@ logging.set_verbosity_error()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load the tokenizer and model from the local directory
-model_path = parent_str + "converted_llama"
+# model_path = parent_str + "converted_llama"
 # model_path = 'EleutherAI/llemma_7b'
+model_path = "Qwen/Qwen2.5-3B-Instruct"
 file_path = parent_str + "finalDataset.csv"
-dir_path = parent_str + "evaluating_pipeline/zero_shot_model_responses.csv"
+dir_path = parent_str + "evaluating_pipeline/zero_shot_model_responses_qwen.csv"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForCausalLM.from_pretrained(model_path).to(device)
+model = AutoModelForCausalLM.from_pretrained(model_path,torch_dtype=torch.float16).to(device)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 # Function to create a prompt based on a row of data
@@ -69,13 +70,14 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = data_preparer.prepare_data()
 
     # Set batch size for processing
-    batch_size = 8  # Adjust based on your GPU’s memory capacity
+    batch_size = 16  # Adjust based on your GPU’s memory capacity
     results = []
 
     # Iterate over the test data in batches
     for i in tqdm(range(0, len(X_test), batch_size), desc="Generating prompts in batches"):
         # Select batch of indices and prepare prompts
-        batch_indices = list(X_test.keys())[i:i + batch_size]
+        batch_indices = list(X_t
+                             est.keys())[i:i + batch_size]
         batch_prompts = [generate_prompt(data_preparer.df.iloc[index]) for index in batch_indices]
         batch_ground_truths = [data_preparer.df.iloc[index]['MisconceptionName'] for index in batch_indices]
         
@@ -83,8 +85,9 @@ if __name__ == "__main__":
         batch_generated_texts = generate_text_batch(batch_prompts, max_length=1000)
         
         # Append results for each entry in the batch
-        for j, index in enumerate(batch_indices):
+        for j, myindex in enumerate(batch_indices):
             results.append({
+                'index':myindex,
                 "Prompt": batch_prompts[j],
                 "Generated Response": batch_generated_texts[j],
                 "Expected Misconception": batch_ground_truths[j]
