@@ -76,8 +76,7 @@ if __name__ == "__main__":
     # Iterate over the test data in batches
     for i in tqdm(range(0, len(X_test), batch_size), desc="Generating prompts in batches"):
         # Select batch of indices and prepare prompts
-        batch_indices = list(X_t
-                             est.keys())[i:i + batch_size]
+        batch_indices = list(X_test.keys())[i:i + batch_size]
         batch_prompts = [generate_prompt(data_preparer.df.iloc[index]) for index in batch_indices]
         batch_ground_truths = [data_preparer.df.iloc[index]['MisconceptionName'] for index in batch_indices]
         
