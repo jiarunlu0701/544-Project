@@ -3,8 +3,8 @@ import torch
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 from tqdm import tqdm
-from torch.cuda.amp import autocast
 
+import random
 # Add your project directory to the system path
 parent_str = "C:/Users/jiaru/OneDrive/Desktop/544-Project/"
 sys.path.append(parent_str)
@@ -21,19 +21,39 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # model_path = 'EleutherAI/llemma_7b'
 model_path = "Qwen/Qwen2.5-3B-Instruct"
 file_path = parent_str + "finalDataset.csv"
-dir_path = parent_str + "evaluating_pipeline/zero_shot_model_responses_qwen.csv"
+dir_path = parent_str + "evaluating_pipeline/few_shot_model_responses_qwen.csv"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(model_path,torch_dtype=torch.float16).to(device)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 # Function to create a prompt based on a row of data
-def generate_prompt(row):
+def generate_prompt(row, X_train, y_train, data_preparer):
+    # print(X_train)
+    keys_list = list(X_train.keys())
+
+    # Sample 5 indices uniformly from the list
+    sampled_indices = random.sample(range(len(keys_list)), 5)
+
+    # Get the keys corresponding to the sampled indices
+    sampled_keys = [keys_list[i] for i in sampled_indices]
+    # print("hi im here")
+    # print(len(sampled_indices))
+    example = ''
+    for index in sampled_keys:
+        example += f'Example{index}, Question :'
+        example += data_preparer.df.iloc[index]['QuestionText']
+        example += '\n'
+        example += 'Answer: '
+        example += data_preparer.df.iloc[index]['answer']
+        example += '\n'
     prompt = (
-        "Instruction: Why is the given answer wrong under such circumstances?\n"
+        "Instruction: Why is the given answer wrong under such circumstances? Some of the examples are given below\n"
+        f"Example from before: \n{example}\n"
         f"answer: {row['answer']}\n"
         f"ConstructName: {row['ConstructName']}\n"
         f"QuestionText: {row['QuestionText']}"
     )
+    # print(prompt)
     return prompt
 
 # Batch generation function with mixed precision
@@ -43,7 +63,7 @@ def generate_text_batch(prompts, max_length=1000):
     
     # Generate tokens using the model with mixed precision
     with torch.no_grad():
-        with autocast():
+        with torch.autocast(device_type="cuda"):
             outputs = model.generate(
                 inputs.input_ids,
                 max_length=max_length,
@@ -60,7 +80,7 @@ def generate_text_batch(prompts, max_length=1000):
         # Find where the prompt ends and the response begins
         response = generated_text[len(prompt):].strip()  # Get text after the prompt
         responses.append(response)
-    
+      /
     return responses
 
 
@@ -77,11 +97,11 @@ if __name__ == "__main__":
     for i in tqdm(range(0, len(X_test), batch_size), desc="Generating prompts in batches"):
         # Select batch of indices and prepare prompts
         batch_indices = list(X_test.keys())[i:i + batch_size]
-        batch_prompts = [generate_prompt(data_preparer.df.iloc[index]) for index in batch_indices]
+        batch_prompts = [generate_prompt(data_preparer.df.iloc[index], X_train, y_train, data_preparer) for index in batch_indices]
         batch_ground_truths = [data_preparer.df.iloc[index]['MisconceptionName'] for index in batch_indices]
         
         # Generate text for the batch of prompts
-        batch_generated_texts = generate_text_batch(batch_prompts, max_length=1000)
+        batch_generated_texts = generate_text_batch(batch_prompts, max_length=2000)
         
         # Append results for each entry in the batch
         for j, myindex in enumerate(batch_indices):
