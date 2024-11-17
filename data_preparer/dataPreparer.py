@@ -28,5 +28,3 @@ class DataPreparer:
         """Full preparation pipeline to load data, prepare features, encode labels, and split."""
         self.load_data()
         return self.split_data()
-
-
