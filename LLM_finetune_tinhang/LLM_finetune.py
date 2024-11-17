@@ -4,6 +4,7 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments,logging
 from torch.utils.data import Dataset
 from peft import get_peft_model, LoraConfig, TaskType
+from tqdm import tqdm  # Import tqdm for progress bar
 
 # Add your project directory to the system path
 parent_str = "C:/Users/jiaru/OneDrive/Desktop/544-Project/"
@@ -22,7 +23,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model_path = "Qwen/Qwen2.5-3B-Instruct"
 file_path = parent_str + "finalDataset.csv"
 dir_path = parent_str + "LLM_finetune_tinhang/output_model"
-
+mydataset_path = parent_str + "LLM_finetune_tinhang/evaluation_dataset/"
 
 class MisconceptionDataset(Dataset):
     def __init__(self, data_preparer, indices, y_train, tokenizer, max_length=512):
@@ -74,6 +75,14 @@ def generate_prompt(row):
     )
     return prompt
 
+# class CustomTrainer(Trainer):
+#     def training_step(self, model, inputs, num_items_in_batch=None):
+#         # Override training_step to integrate tqdm
+#         with tqdm(total=self.args.max_steps, desc="Training", unit="step", position=0, leave=True) as pbar:
+#             result = super().training_step(model, inputs, num_items_in_batch)
+#             pbar.update(1)
+#             return result
+
 
 # Main function for fine-tuning the model
 def main():
@@ -89,9 +98,10 @@ def main():
     data_preparer = DataPreparer(file_path=file_path)
     X_train, X_test, y_train, y_test = data_preparer.prepare_data()
     train_indices = list(X_train.keys())
+    
 
 
-    train_indices = train_indices[:5] # for experimentation purpose
+    # train_indices = train_indices[:20] # for experimentation purpose
 
 
     # Initialize the training dataset
@@ -139,6 +149,10 @@ def main():
     model.save_pretrained(dir_path)
 
     print("Fine-tuning with LoRA complete. Model saved.")
+    temp = "test_x.csv"
+    X_test.to_csv(mydataset_path + temp,index=False)
+    temp = "test_y.csv"
+    y_test.to_csv(mydataset_path + temp,index=False)
 
 
 if __name__ == "__main__":
