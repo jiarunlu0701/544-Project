@@ -1,0 +1,3 @@
+Solve the following math problem step by step. 
+Provide explanations for each step to arrive at the solution. 
+Ensure the process is easy to understand for beginners.

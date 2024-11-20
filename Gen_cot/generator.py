@@ -27,6 +27,7 @@ class Gen_cot:
             return file.read()
 
     def generate_chain_of_thought(self, input_text):
+
         input_prompt = f"{self.prompt}\n{input_text}\n"
         
         # Tokenize the input and generate attention_mask
@@ -64,13 +65,13 @@ if __name__ == "__main__":
             raise FileNotFoundError("The Gen_cot directory does not exist.")
 
         # List available prompt files in the Gen_cot directory
-        prompt_files = [f for f in os.listdir("Gen_cot") if f.endswith(".txt")]
+        prompt_files = [f for f in os.listdir("Gen_cot/prompts") if f.endswith(".txt")]
         if not prompt_files:
             raise FileNotFoundError("No prompt files found in the Gen_cot directory.")
 
         # Default prompt file (set based on available files in the Gen_cot directory)
         # Example: "Gen_cot/math_prompt.txt" or any other prompt file
-        selected_prompt = os.path.join("Gen_cot", prompt_files[0])  # Change index as needed
+        selected_prompt = os.path.join("Gen_cot/prompts", prompt_files[0])  # Change index as needed
 
         # Show user the default configuration
         print(f"Using model: {selected_model}")
