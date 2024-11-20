@@ -1,0 +1,412 @@
+QuestionId,answer,ConstructName,QuestionText,PredictedMisconception,CorrectMisconception,IsMatch
+1614,![2 axes with a negative gradient and a negative y intercept](),"Sketch, or identify a sketch, of a line given in the form y = mx + c, where m is negative",Which of the following sketches could represent \( y=1-4 x ? \),No clear match,"Believes that in y=mx+c, m is the y-intercept",FALSE
+1615,\( \frac{n}{3}-6=21 \),Form expressions from situations described in words,"I think of a number. I take away six and then divide the result by three. The answer I get is \( 21 \).
+Which of the following equations represents this?",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Believes that the order of a worded calculation should be changed to follow BIDMAS ,FALSE
+1616,\( \frac{165}{360} \div 24 \),"Given the sector angle on a pie chart, calculate the frequency of a group","A class of students were surveyed about how many siblings they have.
+
+A selection of results are shown in the table. \begin{tabular}{|c|c|c|}
+\hline Number of siblings & Frequency & Angle on a pie chart \\
+\hline  0  & \( 5 \) & \( \) \\
+\hline 1  & \( \bigstar \) & \( 165 \degree \) \\
+\hline 2  & \(  \) & \(  \) \\
+\hline 3  & \( 2 \) & \(  \) \\
+\hline 4 or more  & \(  \) & \(  \) \\
+\hline  TOTAL  & 24  & \(  \) \\
+\end{tabular} Jenny wants to draw a pie chart of the information.
+
+Which of the following calculations would work out what replaces the star?","Given the length of the sides, still does not recognise there is enough information to find the area",Divides rather than multiplies ,FALSE
+1618,Triangular-based pyramid,Identify non-prisms from a diagram,Which of the following is a correct name of this shape? ![A 3D shape with 1 square face and 4 triangular faces. 1 triangular face is attached to each side of the square face.](),Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Only counts visible faces,FALSE
+1621,\( b \) and \( f \),Identify corresponding angles,"Which of the following are corresponding angles on this diagram? ![Three almost horizontal lines, two marked with arrows. One almost vertical line crossing them. The twelve angles created are marked a-l. ]()",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Mistakes lines as parallel,FALSE
+1622,\( 12 \),"Given a positive x value, find a y value in a table of values for lines in the form ax + by = c","This is a table of values for \( 3 x+2 y=6 \) 
+What should replace the star? \begin{tabular}{|l|c|c|c|c|c|}
+\hline\( x \) & \( 0 \) & \( 1 \) & \( 2 \) & \( 3 \) & \( 4 \) \\
+\hline\( y \) & \( \color{gold}\bigstar \) &   \\
+\hline
+\end{tabular}","Given the length of the sides, still does not recognise there is enough information to find the area","When solving an equation, uses the same operation rather than the inverse.",FALSE
+1623,\( 8 \),Interpret continuous data using a line graph,"How many months have an average temperature above 23⁰C ? ![A line graph with title ""Monthly Average temperatures for Zakynthos, Greece. (⁰C)"". 
+The x-axis is labelled with the first letter of every month of the year and is titled ""Months"". 
+The y-axis is titled ""Average temperature (⁰C)"" and the scale is labelled from 18 to 34 in steps of 2. The following points are plotted and joined together: (J, 18), (F, 20), (M, 21), (A, 22), (M, 23), (J, 25), (J, 29), (A, 32), (S, 27), (O, 22), (N, 20), (D, 18).]()",Does not interpret a sloping gradient as a change in rate,"When asked to find data points above a certain value, gives the number of data points below this value",FALSE
+1624,Eighteen,Identify factors of a number,Which of these is not a factor of \( 18 \) ?,Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Does not think a number can be a factor of itself,FALSE
+1625,\( 3.15 \),Round non-integers to other non-integer values (e.g. 0.02),What is \( \mathbf{3 . 1 5 3} \) rounded to the nearest \( \mathbf{0 . 0 2} \) ?,Rounded to wrong degree of accuracy (2sf not 1sf),Rounds to the wrong degree of accuracy (rounds too little),FALSE
+1626,\( 100 \pi\ \mathrm{cm}^{2} \),Calculate the volume of a cylinder when the dimensions are given in the same units,What is the area of the face marked \( F \) ![A cylinder with height 9cm and radius 5cm. An arrow points to the circular face at the bottom of the cylinder.](),Does not know how to calculate the volume of a prism,Confuses diameter and radius,FALSE
+1627,\( 22.36 \mathrm{~m} \),Calculate the distance travelled using a speed-time graph,"The velocity-time graph shows the velocity of a car during a journey ![A velocity-time graph. Section A goes from (0,0) to (10,20). With the 10 being 10 seconds and the 20 being 20 m/s.]() What was the distance travelled during section
+A?",Does not know how to calculate the volume of a prism,Believes the length of the line in a velocity time graph gives the distance (rather than the area underneath that line).,FALSE
+1629,Neither is correct,Identify factors of algebraic expressions,"Tom and Katie are discussing factors
+Tom says \( 3 \) is a common factor of \( 12 x \) and \( 15 y^{2} \)
+Katie says \( x \) is a common factor of \( 12 x \) and \( 15 y^{2} \)
+Who is correct?",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Does not know how to identify common factors from algebraic terms,FALSE
+1632,Does not simplify,"Multiply algebraic terms, where both are linear versions of different letters (e.g. 4a x 2b)","Simplify, if possible:
+\[
+6 a \times 4 b
+\]",Uses dividing fractions method for multiplying fractions,Does not understand how to multiply algebraic terms,FALSE
+1633,Neither is correct,"Solve two-step linear equations, with the variable on one side, with all positive integers","Jo and Paul are arguing about a first step to solve this equation:
+\(
+6(m+4)=24
+\)
+Jo says you can write: \( m+4=4 \)
+Paul says you can write: \( 6 m=20 \)
+Who is correct?",Solves for y=0 instead of given y-value when reading from a quadratic graph,Believes they must expand brackets before solving an equation,FALSE
+1634,\( 1.0 \),Round numbers between 0 and 1 to one significant figure,Round \( 0.0735 \) to \( 1 \) significant figure,Rounded to wrong degree of accuracy (2sf not 1sf),Rounds to the wrong degree of accuracy (rounds too much),FALSE
+1635,Neither is correct,Recognise and name an identity,"Tom and Katie are discussing identities
+Tom says an identity sign should replace the star here: \( 5 y+7 \underset{\star}{2} 7+5 y \) Katie says an identity sign should replace the star here: \( 5 y-7 \underset{\star} 7-5 y \) Who is correct?","Given the length of the sides, still does not recognise there is enough information to find the area",Does not realise addition is commutative,FALSE
+1636,Neither is correct,Solve coordinate geometry questions involving quadrilaterals,"Tom and Katie are discussing what coordinates would complete a square.
+Tom says \( (1,8) \) and \( (5,8) \)
+Katie says \( (3,6) \) and \( (3,2) \)
+Who is correct? ![A pair of axes with no labels, 1st quadrant only. 2 points are marked with red dots and are labelled with co-ordinates: (1, 4) and (5, 4).]()",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not know how to find the length of a line segment from coordinates,FALSE
+1637,\( -5<x<15 \),Solve linear inequalities involving two inequality signs,"What is the solution to the following inequality?
+\(-3<2 x+1<7\)",Solves for y=0 instead of given y-value when reading from a quadratic graph,"When solving an equation, uses the same operation rather than the inverse.",FALSE
+1639,\( £ 80000 \),Subtract integers with more than 4 digits using a written method where carrying is not needed,"Colm wins \( £ 55750 \) on the lottery and gives \( £ 25250 \) to charity.
+How much money does Colm keep?","Does not subtract from the hours, when having to borrow for a time calculation",Adds rather than subtracts when answering worded problems,FALSE
+1640,\( 6 \),Multiply proper fractions in the form: Fraction × Integer,\( \frac{1}{6} \times 6=? \),Uses dividing fractions method for multiplying fractions,Thinks converting an integer to a fraction means both the numerator and denominator are equal,FALSE
+1641,All are representative,Understand the limitations of the mean,"Which of the following would not be representative of this data?
+\[
+5,6,7,8,8,9,11,12,320
+\]",Does not understand how to create a multiple of an equation,Believes the mean is always representative,FALSE
+1642,\( = \),Use inequality notation to order integers with a different number of digits,"Which symbol makes the following statement correct?
+\(
+725,912 \quad \square \quad 2,705,291
+\)",Uses dividing fractions method for multiplying fractions,Does not understand inequality notation,FALSE
+1643,Equidistant,Understand key loci terms like equidistant and perpendicular,"![A set of axes: x-axis from -4 to 4, y-axis from -4 to 4. A red line is drawn from (-2,2) to (2,2).]() The red line is _________ to the y axis.",Does not understand how to create a multiple of an equation,Does not know the meaning of perpendicular,FALSE
+1644,\( 1: 5 \),Solve length problems involving similar shapes where the missing length is the longer one,"What is the ratio of \( x \) to \( y \) ? ![A triangle. The bottom width is marked '15cm'. One side is split into two parts, one part is called 'x', the other is marked 'y'. A second line goes across the triangle from where the side is split into two parts. It is marked '5cm'. ]()",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not understand that in the ratio 1:n the total number of parts would be 1+n,FALSE
+1645,"\[
+p=4
+\]
+or
+\[
+p=-4
+\]",Solve quadratic equations using balancing,"Solve this equation, giving all solutions:
+\(
+3 p^{2}+9=39
+\)",Solves for y=0 instead of given y-value when reading from a quadratic graph,"When solving an equation, uses the same operation rather than the inverse.",FALSE
+1646,\( m+n=360 \),Use angles around a point with algebra to prove results,"Which of the following statements can you prove from this diagram? ![Angles around a point split into three parts with the parts labelled: m+50, 2m+n and 220-2m]()",Uses dividing fractions method for multiplying fractions,Ignores numerical terms when setting up an equation from a question,FALSE
+1647,\( p-q+3 \),Write algebraic expressions with correct algebraic convention,"Which of the following is the correct way of writing: \( p \) divided by \( q \), then add \( 3 \) using algebraic convention?","When identifying the center of rotation, writes down the origin",Has used a subtraction sign to represent division,FALSE
+1648,\( 0.2 \),Calculate the range from a list of data,"What is the range of the following numbers?
+\[
+0.2, \quad 0.22, \quad 0.212
+\]",Does not know how to calculate the volume of a prism,"When subtracting decimals with a different number of decimal places, lines up the digits incorrectly",FALSE
+1650,\( 70 \),Calculate percentage of an amount mentally where the percent is a multiple of 10,\( 20 \% \) of \( 35= \),Does not know how to calculate the volume of a prism,"When finding a percentage of an amount, assumes they divide the percentage by 10, but not the amount, before multiplying",FALSE
+1651,Neither is correct,Sort and class quadrilaterals into hierarchical families,"Tom and Katie are arguing about parallelograms. Tom says this shape is a parallelogram ![A four sided shape. All sides are equal, opposite angles are equal. There are no right angles.]() Katie says this shape is a parallelogram ![A four sided shape. Opposite sides are equal, all angles are right angles.]() Who is correct?",No clear match,Does not believe a shape can have two correct names e.g. rectangle and parallelogram,FALSE
+1654,\( 0 \),"Given a positive x value, find the corresponding y value for reciprocal graphs","This is a part of the table of values for the equation \( y=\frac{3}{x} \) \begin{tabular}{|c|c|}
+\hline\( x \) & \( 3 \) \\
+\hline\( y \) & \( \bigstar \) \\
+\hline
+\end{tabular} What should replace the star?","Given the length of the sides, still does not recognise there is enough information to find the area",Believes that a fraction with equal numerator and denominator cancels to 0,FALSE
+1656,\( 7 \times 30 \),Calculate the sector angle on a pie chart for a given group,"A class of students were surveyed about how many siblings they have.
+
+A selection of results are shown in the table. \begin{tabular}{|c|c|c|}
+\hline Number of siblings & Frequency & Angle on a pie chart \\
+\hline  0  & \( 7 \) & \( \bigstar \) \\
+\hline 1  & \( \) & \( 144 \degree \) \\
+\hline 2  & \(  \) & \(  \) \\
+\hline 3  & \( 4 \) & \(  \) \\
+\hline 4 or more  & \(  \) & \(  \) \\
+\hline  TOTAL  & 30  & \(  \) \\
+\end{tabular} Jenny wants to draw a pie chart of the information.
+
+Which of the following calculations would work out what replaces the star?",Does not know how to calculate the volume of a prism,Believes you find the angle for a pie chart sector by doing its frequency multiplied by total frequency,FALSE
+1657,\( 0.3 \% \),Convert decimals less than 1 with 2 decimal place to percentages,What is \( 0.03 \) written as a percentage?,Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Multiplied by 10 rather than 100,FALSE
+1659,\( \frac{7}{10} \),Divide mixed number fraction in the form: Integer ÷ Fraction,\( 4 \div 2 \frac{4}{5} \) Which of the following is a correct way to write the answer to this calculation?,Believes the mean is the number of categories given divided by something,Believes division is commutative ,FALSE
+1663,\( 15 \) hours,Read values off a real life graph,"This graph shows the relationship between journey time and the speed of a car.
+How long will the journey take if the car travels at \( 30 \mathrm{mph} \) ? ![A graph showing speed in miles per hour on the x axis and journey time in hours on the y axis. A curve is shown that has a steep negative gradient to start with, that gradually becomes less steep until it is nearly horizontal. The curve passes through the points (8,30) and (30,7)]()","Believes duration can be read from a timetable, rather than calculating from start and end times",Makes an assumption about the squares on a scale representing either 1 or 10,FALSE
+1664,\( 4 \),Add surds in the form mva + nvb,"\(
+2 \sqrt{5}+2 \sqrt{45} \equiv d \sqrt{5}
+\)
+
+What is the value of \( d \) ?",Believes addition of terms and powers of terms are equivalent e.g. a + c = a^c,"When adding or subtracting surds, does not simplify the surd before adding the numbers in front of the surd",FALSE
+1665,Neither is correct,"Solve three or more step linear equations, with the variable on one side, with all positive integers","Tom and Katie are discussing how to solve:
+\(\frac{5 x-1}{3}=2\)
+
+Tom says a correct next line of working could be: \( 5 x-1=6 \)
+
+Katie says a correct next line of working could be: \( \frac{5 x}{3}=3 \)
+
+Who is correct?",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not understand the concept of inverse operations in algebra,FALSE
+1668,"horse, goat
+& toad",Identify the regions on a double Venn diagram given in set notation,"Which element(s) is/are in \( P^{\prime} \) ? ![A diagram showing a Venn diagram of 2 circles. The left cicle is for Set P and contains cat in its left part, horse in the intersection. The right circle is for set Q and contains goat in its right part, horse in the intersection. Outside of the circles it says toad.]()",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Believes that the complement of a set includes any elements which are also in another set.,FALSE
+1670,![D points to 'the base' which is the rectangular face coming off the long horizontal side of the right angled triangle](),Calculate the volume of a triangular-based prism when the dimensions are given in the same units,"Amy wants to calculate the volume of this shape.
+
+Which face should she work out the area of to help her? ![The diagram shows a right angled triangular prism with arrows pointing to one of the right angled triangle faces and the three rectangular faces.]()",Does not know how to calculate the volume of a prism,Thinks cross section of a prism can be any face,FALSE
+1671,Sum,Recognise when to find the Lowest Common Multiple to solve a problem,"A hot tap drips every \( 12 \) seconds
+A cold tap drips every \( 8 \) seconds
+They both drip at exactly the same time
+After how many seconds will they next drip at the same time?
+To solve this problem you need to work out the  \( _____ \) of \( 12 \) and \( 8 \)","Given the length of the sides, still does not recognise there is enough information to find the area",Believes adding two numbers finds their lowest common multiple,FALSE
+1672,\( 11.59 \),Round numbers to two decimal places,What is \( \mathbf{1 1 . 4 7 8 1} \) rounded to \( 2 \) decimal places?,Rounded to wrong degree of accuracy (2sf not 1sf),Rounds incorrectly by changing multiple place values,FALSE
+1674,\( 37 \),Add fractions involving mixed number fractions with different denominators,"\(
+2 \frac{1}{3}+\frac{3}{4}=3 \frac{\bigstar}{12}
+\)
+What should replace the star?",Believes addition of terms and powers of terms are equivalent e.g. a + c = a^c,Finds an equivalent improper fraction when asked for a mixed number,FALSE
+1677,\( (x+14)(x+6) \),Factorise a quadratic expression in the form x² + bx + c,Factorise \( x^{2}+20 x+64 \),"Thinks a quadratic without a non variable term, can not be factorised","Believes that when factorising a quadratic, they can choose any two numbers that add to give the coefficient of x",FALSE
+1678,\( 12.5 \mathrm{mph} \),"Given the distance travelled, complete missing values on a speed-time graph","Work out the speed \( v \) if the distance travelled is \( 50 \) miles. ![A speed-time graph. The vertical axis is labelled Speed (mph) and has no scale marked except for the letter v four squares up.
+The horizontal axis is labelled Time (seconds) and the scale is 0, 1, 2, 3, 4 in even steps.
+The graph consists of two sloped lines. The first is from (0,0) to (2, v) and the second is from (2, v) to (4, 0).]()","Given the length of the sides, still does not recognise there is enough information to find the area",Thinks the shape of the graph does not affect the area calculation,FALSE
+1679,"![A bar model showing a bar for Jodie's age as y + 3 which is half the width of her father's bar.  Her father's bar is shown as 46 in total, split into 2 lots of 23.]()",Write a formula to describe a situation,"Jodie was \( y \) years old on her birthday \( 3 \) years ago.
+Her father was \( 43 \) years old. This year Jodie is half her father's age.
+Which answer does not correctly represent this scenario?","When identifying the center of rotation, writes down the origin",Does not understand bar modelling in algebra,FALSE
+1681,\( 9 \times 12 \),Round decimals to the nearest whole number,"Jane measures the length and width of her rectangular classroom as \( 8.3 \mathrm{~m} \) and \( 12.9 \mathrm{~m} \).
+Which calculation will give the best estimate of the area?",Rounded to wrong degree of accuracy (2sf not 1sf),Rounds up rather than to one significant figure,FALSE
+1685,\( \frac{1}{12} \),Express a division as a fraction,"Samia has \( 12 \) cakes to share between \( 5 \) people.
+What fraction of a cake does each person get?",Confuses a function with an expression,Does not know how to interpret a fraction worded problem ,FALSE
+1686,"![A column subtraction written as 7.0 - 0.612 The 7 is above the 6, the decimal point in 7.0 is above the 1 and the 0 of 7.0 is above the 2.]()",Subtract decimals from integers,How should you line up the digits to calculate \( 7-0.612 \) ?,"Does not subtract from the hours, when having to borrow for a time calculation",Lines up the digits incorrectly when doing a subtraction involving two numbers with a different amount of digits,FALSE
+1687,\( -1 \),Read a decimal on a scale where the required measurement is marked by a dash between two numbers,"What is the value of A? ![A horizontal number-line with 11 vertical, equally spaced, dashes representing the position of numbers. ""-6"" below the 2nd dash and ""3"" below the last dash are the only numbers marked on the line. An arrow, labelled ""A"" is pointing halfway between the 4th and 5th dashes. ]()","Believes duration can be read from a timetable, rather than calculating from start and end times","When reading integers on a number line, assumes each dash is 2",FALSE
+1688,\( 88 \),Write a missing term of an ascending integer linear sequence,The \( 1^{\text {st }} \) term in a linear sequence is \( 8 \). The \( 4^{\text {th }} \) term of the sequence is \( 41 \). What is the \( 8^{\text {th }} \) term of the sequence?,"When identifying the center of rotation, writes down the origin",Believes you multiply the constant difference by the term number to get the term value,FALSE
+1689,\( 1 \frac{2}{0} \),Subtract fractions involving mixed number fractions with the same denominator,\( 2 \frac{4}{5}-1 \frac{2}{5}= \) Leave your answer as a mixed number,"Does not subtract from the hours, when having to borrow for a time calculation","When subtracting fractions, subtracts the numerators and denominators",FALSE
+1690,\( \frac{8}{6} \),Express one quantity as a fraction of another,"A group of \( 8 \) friends share \(  £6 \) equally.
+What fraction of the money do they each get?",Confuses a function with an expression,Believes that a fraction means dividing the denominator by the numerator,FALSE
+1691,\( \frac{1}{10} \),Subtract proper fractions with different denominators which do not share a common factor,Work out: \( \frac{5}{8}-\frac{1}{5} \) Give your answer in the simplest form.,"Does not subtract from the hours, when having to borrow for a time calculation","When adding fractions, changes to common denominator but leaves numerators the same",FALSE
+1695,Neither is correct,"Reflect an object or a point in a diagonal line with the line of reflection drawn, where the line of reflection lies on the edge or outside the object",Tom and Katie are discussing reflections ![Tom says this reflection will create a rectangle. There is a diagonal dashed line with a square sitting on the line.]() ![Katie says this reflection will create a square. There is a diagonal dashed line with a rectangle sitting on the line.]() Who do you agree with?,Believes y=-f(x) is a reflection in y=x,Cannot reflect shape when line of symmetry is diagonal ,FALSE
+1696,\( 365 \),Convert from years to days,\( 1 \) leap year \( =\square \) days,Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Does not know how many days are in a leap year,FALSE
+1698,\( 45 \),"Given a description of a descending linear sequence in words, write some terms of that sequence","If the first term of a sequence is \( 100 \) and the term-to-term rule is \( -5 \), what is the \( 10^{\text {th }} \) term in this sequence?","Given the length of the sides, still does not recognise there is enough information to find the area",Identifies how much repeated use of the term-to-term rule changes a number but does not apply to the sequence,FALSE
+1699,\( \{x<-8\} \cup\{x>8\} \),Solve positive quadratic inequalities by balancing e.g x² ≤ a,"Which of the following is the correct solution to the inequality?
+\(
+x^{2}<64
+\)",Solves for y=0 instead of given y-value when reading from a quadratic graph,Mixes up greater than and less than symbols,FALSE
+1701,Diameter,Identify a chord,What is the correct name for the line marked on the circle? ![\( \theta \)](),Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Confuses diameter and chord,FALSE
+1702,\( 2.7 \),"Given a positive x value, find a y value in a table of values for lines in the form ax + by = c","This is a part of the table of values for the equation
+\[
+10 x-6 y=30
+\] \begin{tabular}{|l|l|}
+\hline\( x \) & \( \bigstar \) \\
+\hline\( y \) & \( 0.5 \) \\
+\hline
+\end{tabular} What should replace the star?","Given the length of the sides, still does not recognise there is enough information to find the area","When solving an equation, uses the same operation rather than the inverse.",FALSE
+1704,\( x^{2}+x-5>0 \),Solve quadratic inequalities from the graph of the quadratic,Which inequality is represented by the shaded region? ![A graph of a quadratic equation. There are dashed vertical lines through the roots of the quadratic. The shaded region is between these vertical lines. ](),Solves for y=0 instead of given y-value when reading from a quadratic graph,Mixes up greater than and less than symbols,FALSE
+1707,\( A=6+4 x \),Use area to write algebraic expressions,Which of the following formulae gives the area of this rectangle? ![Rectangle with base 3 and height 2x.](),Uses dividing fractions method for multiplying fractions,Calculates perimeter when asked for area,FALSE
+1710,Not enough information,Write the next term of a descending integer linear sequence,"What is the next term in this sequence?
+
+
+\[
+105, \quad 97, \quad 89, \quad \ldots
+\]","When identifying the center of rotation, writes down the origin",Does not know how to find the next term in a sequence,FALSE
+1714,\( \frac{2}{3} \),Divide proper fractions in the form: Fraction ÷ Integer,"Calculate:
+\(
+\frac{6}{9} \div 3
+\)",Believes the mean is the number of categories given divided by something,"When dividing a fraction by an integer, divides both the numerator and denominator by the integer",FALSE
+1715,"![The number 3, then a calculator button labelled \(-\), then the number 7]()",Know the functionality of other non-numeric buttons on a calculator,Which of the following would allow you to type \( \frac{3}{7} \) on your calculator? ![A scientific calculator](),Does not know that angles in a triangle sum to 180 degrees,Believes the subtraction button writes a fraction,FALSE
+1716,\( \triangle=+4 \),Expand two brackets with linear terms in the form (ax + b)(x + c),"When you multiply out the brackets and simplify, what replaces the triangle?
+\(
+(3 m+2)(m-2) \equiv \bigstar \ m^{2} \triangle \  m \bigcirc
+\)",Believes they must expand brackets before solving an equation,Thinks signs are interchangeable when adding or subtracting positive and negative numbers,FALSE
+1717,\( \frac{5}{6}+r=7 \),"Solve linear equations with the variable appearing on both sides, involving positive fractions","Which of the following is a correct first step to solve this equation:
+\(\frac{5 r+6}{6 r}=7\)",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not understand equivalent fractions,FALSE
+1724,\( 4000 \),Recognise the place value of each digit in integers,"What is the value of the \( 4 \) in this number?
+\( 31405 \)","Given the length of the sides, still does not recognise there is enough information to find the area",Confuses the hundreds and thousands place value columns,FALSE
+1726,Not enough information,"Calculate missing lengths of shapes by geometrical inference, where the lengths involve algebraic expressions","What length replaces the \( \color{green}\bigstar \)? ![A diagram showing a compound shape. It is an L shape rotated 90 degrees clockwise. The top full width is 3x+4, the partial width to the right is 2x. The left full height is 5, the partial height on the right is 2. There is a green star on the left partial width at the bottom of the diagram.]()",Does not know how to calculate the volume of a prism,Does not know how to find missing lengths in a composite shape,FALSE
+1727,\( 6 p-3 \),Multiply a single term over a bracket where the term on the outside is a number and the inside contains a linear expression,"Expand:
+\[
+3(1-2 p)
+\]",Uses dividing fractions method for multiplying fractions,Believes subtraction is commutative ,FALSE
+1729,\( 35 \times 7 \),Identify that a problem needs to be solved using addition,"Which of the following calculations would solve this problem?
+Harvey is monitoring the growth of his plant. The plant was \( 35 \mathrm{~cm} \) tall. It grew \( 7 \mathrm{~cm} \) more.
+How tall is the plant now?",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Multiplies rather than adds when given the command word 'more',FALSE
+1732,\( 45 \),Interpret remainders from written division problems,"\( 321 \) children are going on a school trip. One adult is needed for every seven children.
+
+How many adults are needed?",Does not interpret a sloping gradient as a change in rate,Difficulty with translating a mathematical answer into a real world context,FALSE
+1733,\( 22 \),Interpret what the numbers in each region of a double Venn diagram mean,"All the students in a class were asked if they have a brother, sister, both or none.
+
+The Venn Diagram shows the results. ![A Venn diagram with two sets, one labelled Brother and one labelled Sister. The number 11 is written in Brother without the intersection , number 7 is in Sister without the intersection, the number 4 is in the intersection of Brother and Sister. The number 6 is outside the circles.]() How many students are in the class?",Does not interpret a sloping gradient as a change in rate,Forgets to include values outside of the Venn diagram when finding the total,FALSE
+1736,\( +4 \),Find the nth term rule for ascending quadratic sequences in the form x² + bx + c,"\[
+-1,4,11,20,31, \ldots
+\]
+
+When calculating the nth-term rule of this sequence, what should replace the square? nth-term rule:
+\(
+n^{2}+2 n \) \(\square\)","Given the length of the sides, still does not recognise there is enough information to find the area",Believes subtraction is commutative ,FALSE
+1737,Not enough information,Use perimeter to write algebraic expressions,What is an expression for the perimeter of this rectangle? ![Yellow rectangle with base length a and side length b](),Uses dividing fractions method for multiplying fractions,Fails to use the properties of simple shapes to work out missing lengths,FALSE
+1738,A right angle,Identify reflex angles,An angle measures \( 212^{\degree} \). This means it is...,Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Does not know that a right angle is 90 degrees,FALSE
+1739,opposite angles,Identify corresponding angles,What type of angles are highlighted in this diagram? ![The diagram is of a pair of parallel lines with a line crossing them. The two highlighted angles each have a parallel line above it and the transverse line to the left of it.](),Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Confuses corresponding and vertically opposite angles,FALSE
+1740,\( y=1 \),Identify the line of symmetry of curves in the form (x + a)(x + b),"This is the graph of
+\(y=(x+1)(x-3)\) ![A set of axes with the graph y=(x+1)(x-3) drawn on.]() What is the equation of the line of symmetry?",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Confuses the equations of vertical and horizontal lines,FALSE
+1741,Fibonacci,Recognise that a sequence is quadratic when expressed as a pattern,"Which of the following is the best way to describe this sequence: ![First three patterns in a sequence. They are all rectangles made up of small squares. Pattern 1 is three small squares on top of one another, so the dimensions of the rectangle are 1 across and 3 up. Pattern 2 is a rectangle of dimensions 2 squares across and 6 up. Pattern 3 is a rectangle of dimensions 3 squares across and 9 squares up.]()","Given the length of the sides, still does not recognise there is enough information to find the area",Does not know what a Fibonacci sequence is,FALSE
+1742,Does not simplify,Simplify algebraic expressions to maintain equivalence by collecting like terms involving three or more linear variables,"Simplify the following expression by collecting
+like terms
+\(6 x-2 y-z+3 y\)",Forgot to simplify the fraction,Does not understand when like terms can be collected,FALSE
+1743,\( 264 \% \),Express one quantity as a percentage of another mentally,"I increase \( £ 150 \) by \( 60 \% \).
+Then, I increase the new amount by \( 10 \% \).
+What percentage of the original amount do I have now?",Confuses a function with an expression,Thinks they had to give the new amount rather than the total percentage that the original has been increased by.,FALSE
+1745,\( 60 \mathrm{~cm} \),Use the properties of an equilateral triangle to find missing lengths,"Triangle \( A B C \) is an equilateral triangle. Find length \(AC\). ![A triangle with vertices labelled A, B, C. Side BC is 8cm, side AC is labelled with a question mark.]()",Uses dividing fractions method for multiplying fractions,Does not know the meaning of equilateral,FALSE
+1748,This is not a reflection,"Describe a reflection in a diagonal line by giving the line of reflection as an equation, where the line of reflection lies on the edge or outside the object","Which line gives the reflection of shape \( P \) onto shape Q? ![A coordinate grid with two right angled triangles drawn, labelled P and Q. P has the coordinates: (2,5) (2,8) and (4,5). Q has the coordinates: (5,2) (8,2) and (5,4).]()",Uses more than 3 letters to describe an angle,Believes lines of reflection must be vertical or horizontal,FALSE
+1749,\( 0.7 \% \),Convert decimals less than 1 with 2 decimal place to percentages,What is \( 0.07 \) written as a percentage?,Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Multiplies by 10 instead of 100 when converting decimal to percentage,FALSE
+1756,\( 23.00 \),Convert integer percentages with 2 digits to decimals,How do you write \( 23 \% \) as a decimal?,Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Does not understand a percentage is out of 100,FALSE
+1757,"\( -1,-4,-10 \)","Given a description of an ascending sequence using quadratics in words, write some terms of that sequence",![Square then subtract \( 2 \)]() The first three terms of which sequence below is produced by this term-to-term rule?,"Given the length of the sides, still does not recognise there is enough information to find the area",Mixes up squaring and multiplying by 2 or doubling,FALSE
+1758,"![A function machine which has 4 parts joined by arrows pointing from left to right. ""y"" is the first part, written on the left, followed by a horizontal arrow pointing to a rectangle that has ""+ 4"" written inside it, followed by a horizontal arrow pointing to a rectangle that has ""square"" written inside it, followed by a horizontal arrow pointing to ""𝑥""]()",Express a non-linear equation as a function machine,Which function machine matches the equation \( y=x^{2}+4 ? \),Confuses a function with an expression,"When using a function machine, confuses the input and the output.",FALSE
+1759,The modal use of water,Interpret a pie chart,"This pie chart shows how an average American household uses water.
+
+Which of the following can not be found from this pie chart? ![A pie chart showing multiple sections: Toilet 26.7%, Leaks 13.7%, Other 5.3%, Clothes Washer 21.7%, Faucet 15.7%, Shower 16.8% ]()",Does not interpret a sloping gradient as a change in rate,Does not know how to read information off a pie chart,FALSE
+1760,Cannot be simplified,Add surds in the form va + vb,"\( \sqrt{12}+\sqrt{27} \) Simplify, if possible.",Believes addition of terms and powers of terms are equivalent e.g. a + c = a^c,Does not recognise when a surd can be simplified,FALSE
+1761,\( 210^{\circ} \),Use a protractor to measure angles between 180° and 270°,"What is the size of the marked angle? ![A 360 degree protractor with 2 red lines and a pink sector marking out a reflex angle being measured by the protractor. The outer scale goes from 0 to 360 clockwise. The angle is between one red line that is at 0 (outer scale) and 180 (inner scale), clockwise  to the other red line that is half way between 210 and 220 (outer scale) and halfway between 330 and 320 (inner scale).
+]()",Uses dividing fractions method for multiplying fractions,Correct scale but wrong value on protractor reading.,FALSE
+1766,\( \frac{37}{20} \leq n \),Solve linear inequalities in one variable that require three or more steps where the variable appears on one side of the equation ,"Solve
+\[
+36 \leq 4(5 n-1)
+\]",Solves for y=0 instead of given y-value when reading from a quadratic graph,Only multiplies the first term in the expansion of a bracket,FALSE
+1767,\( -7 \),"Solve one-step linear equations requiring addition or subtraction, with all positive integers","Isaac is solving an equation. This is the left-hand side of two lines of working from Isaac's book. Isaac always records what operation he has done to both sides of the equation.
+What operation should replace the star? ![The image shows two lines of working and an arrow from the top line to the bottom line with a star next to it where the operation would be labelled. The top line of working is x - 7 = ..., and the bottom line is x = ...]()",Solves for y=0 instead of given y-value when reading from a quadratic graph,"When solving an equation, uses the same operation rather than the inverse.",FALSE
+1770,\( 57 \),Solve problems that combine addition or subtraction with multiplication,"There are \( 7 \) shelves of plates. Three of the shelves hold \( 17 \) plates each. Two of the shelves hold \( 21 \) plates each. The other shelves hold \( 19 \) plates each.
+How many plates are there in total?",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not recognise when to find a multiple from a worded question,FALSE
+1771,None of these,Use inequality notation to order fractions whose denominators are multiples of the same number ,"Which symbol makes the following statement correct?
+\(
+\frac{3}{4}\space \square\space \frac{5}{8}
+\)",Uses dividing fractions method for multiplying fractions,Does not understand inequality notation,FALSE
+1772,\( 180^{\degree} \),Work out the size of each interior angle in a regular polygon,What is the size of each interior angle in a regular octagon?,Uses only the first two terms of a sequence to work out a term-to-term rule,Does not understand to find each interior angle of a regular polygon you divide the sum by the number of sides,FALSE
+1773,\( 0.027 \),Multiply two decimals together with the same number of decimal places,\( 0.3 \times 0.9= \),Uses dividing fractions method for multiplying fractions,"When multiplying decimals, divides by the wrong power of 10 when reinserting the decimal",FALSE
+1776,\( 21 \),Interpret what the numbers in each region of a double Venn diagram mean,"All the students in a class were asked if they have a brother, sister, both or none.
+
+The Venn Diagram shows the results. ![A Venn diagram with two sets, one labelled Brother and one labelled Sister. The number 10 is written in Brother without the intersection , number 5 is in Sister without the intersection, the number 7 is in the intersection of Brother and Sister. The number 9 is outside the circles.]() How many students are in the class?",Does not interpret a sloping gradient as a change in rate,Forgets to include values outside of the Venn diagram when finding the total,FALSE
+1778,\( 1 \mathrm{~cm} \),Calculate the area of a trapezium where the dimensions are given in the same units,"Sally wants to calculate the area of this trapezium using the formula: Area \( =\left(\frac{a+b}{2}\right) h \) ![A trapezium with the parallel sides labelled 5cm and 1cm, the slant height labelled 6cm and the perpendicular height labelled 4cm.]() What is the values of \( h \) ?",Does not know how to calculate the volume of a prism,Does not recognise the height of a trapezium as the perpendicular length between the parallel sides,FALSE
+1779,\( 7 \),"Identify and count the faces, vertices and edges of a 3D shape",How many vertices does this shape have? ![cuboid](),Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Only counts visible vertices,FALSE
+1780,![\( \triangle=11 \)](),"Calculate the midpoint between two coordinates in 2D, where all the values are positive integers","Millie is working out the midpoint of these two points. What should replace the triangle? ![An x and y axis showing 3 points. (1,8) (star, triangle) and (7,3)]()",Does not know how to calculate the volume of a prism,Does not divide by 2 when finding midpoint,FALSE
+1782,Neither A nor B,Find missing angles using angles on a straight line,"Which calculation is a correct procedure to find the angle marked [?]
+A
+\( 360-(54 \times 2) \)
+B
+\( 180-54 \) ![Two intersecting lines and one adjacent line. One line is marked with the angle 54 degrees. Between the two adjacent lines there is a box with a question mark in it [?]]()","Given the length of the sides, still does not recognise there is enough information to find the area",Does not know that angles on a straight line sum to 180 degrees,FALSE
+1784,\( h=13.3 \mathrm{~cm} \),"Given the area of a trapezium, calculate a missing dimension","The area of this trapezium is \( 40 \mathrm{~cm}^{2} \). What would the perpendicular height, \( h \), of the trapezium be? ![Trapezium with parallel sides of lengths 6cm and 10cm]()","Given the length of the sides, still does not recognise there is enough information to find the area",Uses only the base and perpendicular height when calculating the area of a trapezium,FALSE
+1785,"\( 876,000 \)",Round integers to the nearest other power of 10,"What is \( 875,599 \) rounded to the nearest \( 10,000 \) ?",Rounded to wrong degree of accuracy (2sf not 1sf),Rounds to the wrong degree of accuracy (rounds too little),FALSE
+1786,\( 51 \),Interpret a bar chart,"The bar chart shows the drinks sold in Caroline's Café on Monday and Tuesday last week.
+
+Approximately how many Hot Chocs were sold on Tuesday? ![Composite bar chart with four bars, labelled Tea, Coffee, Hot Choc and Cans. Each bar has two sections, the lower one shows how many sold on Monday and the upper one showing Tuesdays sales. The vertical scale has 5 ticks between 0 and 50, 50 and 100 etc.
+The Hot Chocs bar's lower section is 5 ticks high, and the whole bar is 2 ticks above 100 on the vertical scale.]()",Does not interpret a sloping gradient as a change in rate,Misreads scale,FALSE
+1788,\( 300 \),Recognise the place value of each digit in integers,"What is the value of the \( 3 \) in the number
+\[
+7,359,250 \text { ? }
+\]","Given the length of the sides, still does not recognise there is enough information to find the area",Confuses the hundreds and hundred thousands place value columns,FALSE
+1790,\( 4 \),Find the area of rectilinear shapes by counting squares,What is the area of this shape? ![A square cm grid showing a shape made up of 3 small squares.](),"Given the length of the sides, still does not recognise there is enough information to find the area","When calculating the area of a rectilinear compound shape, calculates the are of the surrounding rectangle",FALSE
+1791,Need more information,"Given an equation, form  or identify related equations","\(k<\frac{m}{3} +1\)
+Using the diagram on the right, is the expression above... ![A bar model where the same length is represented by either 3 lengths of 'k' or 1 length of 'm']()","Given the length of the sides, still does not recognise there is enough information to find the area",Does not understand bar modelling in algebra,FALSE
+1792,Not enough information in the diagram,Calculate the perimeter of a rectilinear shape by adding lengths expressed in the same units,What is the perimeter of this rectangle? ![A rectangle with a base length of 8 cm and a perpendicular height of 5 cm.](),Does not know how to calculate the volume of a prism,Does not recall rectangle side length property,FALSE
+1794,\( 7.40 \),Convert fractions less than 1 to terminating decimals of 3 or more decimal places,Convert \( \frac{7}{40} \) into a decimal,Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Converts a fraction to a decimal by placing a decimal point between the numerator and denominator,FALSE
+1795,\( \frac{6}{8} \),Subtract proper fractions with different denominators where one is a multiple of the other,\( \frac{7}{8}-\frac{1}{4}= \),"Does not subtract from the hours, when having to borrow for a time calculation",Does not understand how to maintain equivalence in fractions,FALSE
+1797,\( l \),Identify a unit of volume or capacity,"Sally has answered a question on volume. Her answer is \( 500 \).
+Behind the star she has written the units that she used.
+Which of the following units is definitely wrong?
+
+\( 500 \,\bigstar \)",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Does not recognise litres as a unit of volume,FALSE
+1798,"\( (0,2) \)","Reflect an object or a point in a diagonal line with the line of reflection drawn, where the line of reflection lies on the edge or outside the object","The triangle is reflected in the dashed line.
+What are the new coordinates of point \( \mathrm{P} \) ? ![A coordinate grid with a reflection line drawn and a triangle. The reflection line passes through the coordinates: (-1,-1) (0,0) (1,1) (2,2) etc. The triangle has coordinates: (2,2) (3,3) and (4,2). P is the coordinate (4,2).]()",Believes y=-f(x) is a reflection in y=x,Counts the squares rather than the diagonals when reflecting in y=x or y=-x ,FALSE
+1799,\( 0.00 \),Round numbers to two decimal places,"\( 0.009753 \)
+What is this number rounded to \( 2 \) decimal places?",Rounded to wrong degree of accuracy (2sf not 1sf),Rounds down instead of up,FALSE
+1801,\( -3.5<x<1.5 \),Solve linear inequalities involving two inequality signs,"What is the solution to the following inequality?
+\(
+-5<2 x+1<5
+\)",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not reverse the order of operations when solving an equation,FALSE
+1802,There is the same amount of each.,Order fractions whose denominators are multiples of the same number ,"In a bakery \( \frac{3}{7} \) of the cakes are chocolate, \( \frac{5}{14} \) of the cakes are vanilla and \( \frac{6}{28} \) are lemon.
+Which flavour cake is there more of?","Confuses the order of operations, believes addition comes before division",Does not find a common denominator when comparing fractions,FALSE
+1803,\( 160^{\circ} \),Estimate the size of obtuse angles,Which of the following is the best estimate of the size of this angle? ![An obtuse angle](),Estimates shares of a ratio instead of calculating,Estimates angle without using knowledge of degrees in quarter turns,FALSE
+1807,\( 5 \),Calculate the square of a number,What is the value of \( 3^{2} \) ?,Does not know how to calculate the volume of a prism,Adds the index to the number,FALSE
+1809,\( \bigcirc=-2 \),Expand two brackets with linear terms in the form (x + a)(x + b),"What should replace the circle when these two brackets are expanded and simplified?
+\(
+(p-3)(p+1) \equiv p^{2} \triangle p \bigcirc
+\)",Believes they must expand brackets before solving an equation,Adds instead of multiplying when expanding bracket,FALSE
+1814,Neither is correct,Recognise and use efficient methods for mental multiplication,"Tom and Katie are discussing ways to calculate \( 49 \times 9 \) mentally
+Tom multiplies \( 49 \) by \( 10 \) and then subtracts \( 49 \) from the answer.
+Katie does \( 50 \times 9 \) and then subtracts \( 9 \) from the answer
+Who would get the correct answer?","Given the length of the sides, still does not recognise there is enough information to find the area",Does not think that the compensation strategy for the multiplication of 2 numbers is valid.,FALSE
+1815,You cannot have a power of \( 0 \),Raise a positive integer to the power of 0,\( (16)^{0}=? \),Thinks the fraction to decimal conversion button on a calculator can be used to raise to a power,Forgotten that anything to the power of 0 equals 1,FALSE
+1816,\( 148 \),Read an integer on a scale where the required measurement is marked by a dash between two numbers,What number is the arrow pointing to? ![Number line from 100 to 200 with an arrow pointing to the value 145](),"Believes duration can be read from a timetable, rather than calculating from start and end times","When reading integers on a number line, assumes each dash is 2",FALSE
+1817,\( 0.00001 \),Multiply two decimals together with the same number of decimal places,\( 0.01^{3}= \),Uses dividing fractions method for multiplying fractions,"When multiplying decimals, divides by the wrong power of 10 when reinserting the decimal",FALSE
+1818,Neither is correct,Simplify fractions that simplify to a non-unit fraction,"Tom and Katie are arguing about how to leave answers to some fractions questions they are working on.
+
+Tom says he is going to leave one of his answers as \( \frac{143}{2} \)
+
+Katie says she is going to leave one of her answers as \( \frac{4.2}{9} \)
+
+Who is correct?",Forgot to simplify the fraction,Does not know that you can leave a fraction in improper form,FALSE
+1820,XNR,Identify corresponding angles,"\( \mathrm{M} \) and \( \mathrm{N} \) are the intersections of the line \( X Y \) with the lines \( P Q \) and \( R S \).
+Which angle is corresponding to angle QMY? ![A pair of parallel lines pointing up to the left. PQ and RS are the ends of the parallel lines. PQ is on the left of the diagram with Q being the top left.
+A red straight line, XY, crosses the parallel lines. X is on the left of the diagram.
+Line XY crosses line PQ at a point marked M.
+Line XY crosses line RS at a point marked N.
+The angle QMY is marked in red.]()",Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Confuses corresponding and alternate angles,FALSE
+1822,\( \left(\begin{array}{c}-2 \\ 4\end{array}\right) \),Describe a translation using vector notation where at least one value is negative,"Which vector correctly describes the translation that maps object \( P \) onto object \( Q \)? ![The image shows a pair of axes and two congruent trapezia labelled P and Q. Trapezium P has vertices at (1, 7), (2, 9), (4, 9), (5, 7). Trapezium Q has vertices at (3, 3), (4, 5), (6, 5), (7, 3).]()",Uses more than 3 letters to describe an angle,"When describing a translation, goes from the image to the original",FALSE
+1828,\( 40^{\circ} \),Find missing angles using angles on a straight line,"What is the value of the angle marked \( \mathbf{\square} \) ? ![Image showing three vertices of a polygon. We do not see how many sides the polygon has. The angles shown are marked 20 degrees, 120 degrees and the third is marked with a square.]()","Given the length of the sides, still does not recognise there is enough information to find the area",Misinterprets the meaning of angles on a straight line angle fact,FALSE
+1829,\( 360 \),Round the elements of a calculation to one significant figure to perform an estimation,"Estimate the value of
+\(
+\frac{4.12 \times 18.3}{0.226}
+\)",Rounded to wrong degree of accuracy (2sf not 1sf),Rounds to the nearest integer when estimating,FALSE
+1831,\( 10000 \),Convert between m³ and cm³,"\(
+1 m^3 =\bigstar cm^3
+\)
+
+What should replace the star?",Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Does not cube the conversion factor when converting cubed units,FALSE
+1833,Neither is correct,Determine the function of a single function machine used to create an algebraic expression,"Tom and Katie are discussing this function machine ![A function machine with 3 rectangles in a row, joined by arrows pointing from left to right. The first rectangle on the left has ""input"" written above it and ""m"" written inside it. The middle rectangle is empty and the final rectangle has ""output"" written above it and ""4m"" written inside it.]() Tom says the function could be \( +3 m \)
+
+Katie says the function could be \( \times 4 \)
+
+Who do you agree with?",Thinks the difference between the numerator and denominator determines how close the fraction is to 1,"Does not realise that two letters together, or a number and letter together, are multiplying",FALSE
+1835,"![A straight line graph from approx 5 on the y axis. Y axis labelled US dollars extending to 15, x axis labelled pounds extending to 10]()",Given a situation sketch an appropriate real life graph,"\( £ 1 \) is \( 1.5 \) US dollars.
+Which of these graphs shows the value of up to \( £ 10 \) in US dollars?","Given the length of the sides, still does not recognise there is enough information to find the area",Believes a direct proportion graph does not have to start at the origin,FALSE
+1836,\( \frac{37}{42} \),Calculate the probability of two dependent events occurring without drawing a tree diagram,"There are \( 4 \) red balls and \( 3 \) yellow balls in a cup ![A cup with 4 red and 3 yellow balls in it. The balls are all the same size.]() Kate picks out two balls at the same time.
+
+What is the probability at least one ball is red?",Does not know how to calculate the volume of a prism,Adds the numerators when working out a combined probability,FALSE
+1837,\( -10 \),Use the order of operations to carry out calculations involving powers,What answer would your calculator give if you typed in \(-5^{2}\) ![A scientific calculator](),Uses dividing fractions method for multiplying fractions,Has multiplied the base number and the power,FALSE
+1841,Does not simplify,Simplify an algebraic fraction by factorising both the numerator and denominator,"Simplify the following, if possible
+\(
+\frac{5 m-10}{m^{2}+3 m-10}
+\)",Forgot to simplify the fraction,Does not know how to simplify algebraic fractions,FALSE
+1842,\( \frac{4}{10} \),Divide proper fractions in the form: Fraction ÷ Integer,"Calculate:
+\(
+\frac{2}{5} \div 2
+\)",Believes the mean is the number of categories given divided by something,"When dividing a fraction by an integer, multiplies both the numerator and denominator by the integer",FALSE
+1843,Jadon is accelerating at a rate of \( 0.8 \mathrm{~m} / \mathrm{s}^{2} \),Interpret the gradient on a linear section on a real life graph,"Jadon decides to go for a run.
+The graph on the right shows Jadon's speed in metres per second \( (s) \) over time in seconds
+\( (t) \).
+
+The gradient of the negative sloping section of the graph is \( 0.8 \).
+
+Which of the following does that \( 0.8 \) best represent? ![A sketch of a graph with s on the y axis and t on the x axis. A straight line slopes upwards from the origin 2/3 of the way up the graph, 1/5 across the graph. It then becomes horizontal for the next 1/5 of the graph, before sloping downwards in a straight line for the remainder of the graph. ]()",Does not interpret a sloping gradient as a change in rate,Believes a downward slope on a speed-time graph shows positive acceleration,FALSE
+1844,"\( (0,-48) \) \( (0,-48) \)",Sketch curves in the form (x + a)(x + b) indicating where they cross the axes,\( y=(x-8)(x-6) \) \( y=(x-8)(x-6) \) Where does this curve intercept the \( y \) axis? Where does this curve intercept the \( y \) axis?,"When sketching graphs of factorised quadratics, does not see that the negative of the non variable terms in the brackets give the x intercepts or the roots of the graph.",Believes multiplying two negatives gives a negative answer,FALSE
+1845,Neither is correct,Use the order of operations to carry out calculations involving roots,"Tom and Katie are discussing calculations involving square roots.
+
+Tom says \( \sqrt{16}+\sqrt{9}=5 \)
+
+Katie says \( \sqrt{16+9}=5 \)
+
+Who is correct?",Uses dividing fractions method for multiplying fractions,Does not understand square root,FALSE
+1847,Neither is correct,Carry out a subtraction problem with positive integers where the answer is less than 0,"Tom and Katie are trying to write calculations based on the diagram below.
+
+Tom writes: \( 15-20=-5 \)
+
+Katie writes: \( (-5)+20=15 \)
+
+Who is correct? ![Number line with an arrow marked -20 going from 15 to -5]()",Forgets to carry the tens when doing column multiplication,Does not understand the diagram given in the question,FALSE
+1849,\( 23 \),"Given a positive x value, find the corresponding y value for the curve y = x3 + c","This is a part of the table of values for the equation \( \boldsymbol{y}=\boldsymbol{x}^{\mathbf{3}} \) ![\begin{tabular}{|c|c|}
+\hline\( x \) & \( 2 \) \\
+\hline\( y \) & W \\
+\hline
+\end{tabular}]() What should replace the star?","Given the length of the sides, still does not recognise there is enough information to find the area",Writes the index as a digit on the end of a number,FALSE
+1855,\( 40 \),Convert between l and  cm³,"Complete this statement:
+\( 4 \) litres \( = \)_________ \( \mathrm{cm}^{3} \)",Multiplies by 1000 instead of 100 when converting a decimal to a percentage,Thinks 1l = 10 cubic centimetres,FALSE
+1857,\( 5.5 \),Calculate the median as an average from an odd numbered list of data,"What is the median of the following numbers?
+\( 2,2,4,7,10 \)",Does not know how to calculate the volume of a prism,"When finding the median for an odd numbered data set, find the midpoint of two values rather than giving the middle value",FALSE
+1858,Showing the numbers of each type of animal in a zoo,Identify when it is appropriate to use a line graph,Which of the following situations would a line graph be the most appropriate to use?,Can identify the multiplier used to form an equivalent fraction but does not apply to the numerator,Does not understand that a line graph shows a relationship between 2 variables,FALSE
+1859,\( 2.5 \ \text{m} \),Read values off a displacement-time graph,"This graph shows the displacement of a ball from a starting point at various times.
+How far did the ball travel between \( 1 \) and \( 2 \) seconds? ![A displacement versus time graph]() This graph displacem from a start","Believes duration can be read from a timetable, rather than calculating from start and end times",Adds instead of subtracts when asked to find the difference,FALSE
+1860,Neither is correct,"Solve linear equations with the variable appearing on both sides, involving negative integers","Tom and Katie are arguing about a first step to solve this equation:
+\(1-4 v=3-9 v\)
+
+Tom says you can write: \( 1+5 v=3 \)
+
+Katie says you can write: \( -4 v=2-9 v \)
+
+Who is correct?",Solves for y=0 instead of given y-value when reading from a quadratic graph,Does not realise that to maintain balance in an equation they must add or subtract the same amount from both sides,FALSE
+1861,\( 350 \),Round integers to the nearest 10,What is \( 326 \) rounded to the nearest \( 10 \) ?,Rounded to wrong degree of accuracy (2sf not 1sf),Rounds to the wrong degree of accuracy (rounds too much),FALSE
+1863,\( 3 \),Carry out division  problems involving one negative integer,\( 12 \div(-4)= \),Forgets to carry the tens when doing column multiplication,Believes dividing a positive by a negative gives a positive answer,FALSE
+1864,\( 16 \),Calculate the range from a list of data,"What is the range of the following numbers?
+\[
+1,5,5,17,-6
+\]",Does not know how to calculate the volume of a prism,Does not include negative numbers when calculating a range,FALSE
+1865,\( 11-3 \),"Describe an enlargement, with no centre of enlargement given, by a positive scale factor bigger than 1","Shape \( Q \) is an enlargement of shape \( P \).
+What calculation works out the constant of proportionality from shape \( P \) to shape \( Q \) ? ![To similar star shapes labelled P and Q. They have the same side labelled for P it is 3cm and for Q it is 11cm]()",Uses more than 3 letters to describe an angle,"When calculating a scale factor, thinks they need to subtract rather than divide.",FALSE
+1866,\( 33 \),"Use the order of operations to carry out calculations involving addition, subtraction, multiplication, and/or division","What does the following equal?
+\[
+8-7+10 \times 3
+\]",Uses dividing fractions method for multiplying fractions,Carries out operations from left to right regardless of priority order,FALSE
+1867,Neither is correct,Distinguish between congruency and similarity,Tom and Katie are discussing congruence and similarity. Who is correct? Tom says these two squares are congruent ![An image of two squares. A little one and a big one. They are enlargements of each other.]() Katie says these two squares are similar ![An image of two squares. A little one and a big one. They are enlargements of each other.](),No clear match,Thinks congruent shapes are the same shape but can be different sizes,FALSE
+1868,Neither is correct,"Describe a 90° or 270° rotation giving the angle and direction of rotation, and the coordinates of the centre of rotation, where the centre of rotation lies on the edge or outside of the object","Jo and Paul are arguing about how to fully describe the rotation from shape \( P \) to shape \( Q \)
+
+Jo says: ""a rotation of \( 90^{\degree} \) anticlockwise""
+
+Paul says: ""a rotation of \( +270^{\degree} \) about \( (-1,1)^{\prime \prime} \)
+
+Who is correct? ![A coordinate grid with two trapeziums drawn on it and a centre of rotation marked on, one space to the right and one space up from the origin. Trapezium P has the coordinates: (-4,4) (-2,4) (-2,3) and (-4,1). Trapezium Q has the coordinates: (-4,-2) (-4,0) (-3,0) and (-1,-2).]()",Uses more than 3 letters to describe an angle,Does not know about the + notation for directions in rotations,FALSE
