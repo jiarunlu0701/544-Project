@@ -61,17 +61,17 @@ if __name__ == "__main__":
         selected_model = "Qwen/Qwen2.5-3B-Instruct"  # Default model here
 
         # Ensure the Gen_cot directory exists and contains prompt files
-        if not os.path.exists("Gen_cot"):
+        if not os.path.exists("Gen_COT"):
             raise FileNotFoundError("The Gen_cot directory does not exist.")
 
         # List available prompt files in the Gen_cot directory
-        prompt_files = [f for f in os.listdir("Gen_cot/prompts") if f.endswith(".txt")]
+        prompt_files = [f for f in os.listdir("Gen_COT/prompts") if f.endswith(".txt")]
         if not prompt_files:
-            raise FileNotFoundError("No prompt files found in the Gen_cot directory.")
+            raise FileNotFoundError("No prompt files found in the Gen_COT directory.")
 
         # Default prompt file (set based on available files in the Gen_cot directory)
         # Example: "Gen_cot/math_prompt.txt" or any other prompt file
-        selected_prompt = os.path.join("Gen_cot/prompts", prompt_files[0])  # Change index as needed
+        selected_prompt = os.path.join("Gen_COT/prompts", prompt_files[0])  # Change index as needed
 
         # Show user the default configuration
         print(f"Using model: {selected_model}")
