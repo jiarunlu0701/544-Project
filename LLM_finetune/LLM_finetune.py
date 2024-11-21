@@ -21,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model_path = "Qwen/Qwen2.5-3B-Instruct"
 file_path = parent_str + "finalDataset.csv"
 dir_path = parent_str + "LLM_finetune_tinhang/output_model"
-mydataset_path = parent_str + "LLM_finetune_tinhang/evaluation_dataset/"
+mydataset_path = parent_str + "LLM_finetune/LLM_finetune_tinhang/evaluation_dataset/"
 
 
 def generate_chat_prompt(row, tokenizer):
@@ -141,3 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+ 
