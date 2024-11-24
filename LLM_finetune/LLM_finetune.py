@@ -4,7 +4,6 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments, logging
 from torch.utils.data import Dataset
 from peft import get_peft_model, LoraConfig, TaskType
-from tqdm import tqdm
 
 # Add your project directory to the system path
 parent_str = "C:/Users/jiaru/OneDrive/Desktop/544-Project/"
@@ -17,13 +16,13 @@ logging.set_verbosity_error()
 # Define device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Load the tokenizer and model from the local directory
+# Paths
 model_path = "Qwen/Qwen2.5-3B-Instruct"
 file_path = parent_str + "finalDataset.csv"
-dir_path = parent_str + "LLM_finetune_tinhang/output_model"
-mydataset_path = parent_str + "LLM_finetune_tinhang/evaluation_dataset/"
+dir_path = parent_str + "LLM_finetune/output_model"
+mydataset_path = parent_str + "LLM_finetune/evaluation_dataset/"
 
-
+# Generate chat prompt
 def generate_chat_prompt(row, tokenizer):
     messages = [
         {"role": "system", "content": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant."},
@@ -34,7 +33,7 @@ def generate_chat_prompt(row, tokenizer):
     chat_prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False)
     return chat_prompt
 
-
+# Dataset class
 class MisconceptionDataset(Dataset):
     def __init__(self, data_preparer, indices, y_train, tokenizer, max_length=512):
         self.data_preparer = data_preparer
@@ -57,10 +56,8 @@ class MisconceptionDataset(Dataset):
         misconception = self.y_train[index]
 
         # Tokenize the input and target texts separately
-        inputs = self.tokenizer(prompt, padding="max_length", max_length=self.max_length, truncation=True,
-                                return_tensors="pt")
-        labels = self.tokenizer(misconception, padding="max_length", max_length=self.max_length, truncation=True,
-                                return_tensors="pt")
+        inputs = self.tokenizer(prompt, padding="max_length", max_length=self.max_length, truncation=True, return_tensors="pt")
+        labels = self.tokenizer(misconception, padding="max_length", max_length=self.max_length, truncation=True, return_tensors="pt")
 
         # Convert labels to a 1D tensor
         labels = labels.input_ids.squeeze()
@@ -74,14 +71,14 @@ class MisconceptionDataset(Dataset):
             "labels": labels,
         }
 
-
+# Main function
 def main():
     # Load the tokenizer and model
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
     model.gradient_checkpointing_enable()
 
-    # Set pad token if not defined
+    # Ensure pad token is defined
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
@@ -89,6 +86,9 @@ def main():
     data_preparer = DataPreparer(file_path=file_path)
     X_train, X_test, y_train, y_test = data_preparer.prepare_data()
     train_indices = list(X_train.keys())
+
+    # Verify data alignment
+    assert len(train_indices) == len(y_train), "Mismatch between X_train and y_train lengths"
 
     # Initialize the training dataset
     train_dataset = MisconceptionDataset(data_preparer, train_indices, y_train, tokenizer)
@@ -99,7 +99,7 @@ def main():
         r=8,
         lora_alpha=16,
         lora_dropout=0.05,
-        target_modules=["q_proj", "v_proj"],
+        target_modules=["q_proj", "v_proj"],  # Ensure these are valid for the model
     )
     model = get_peft_model(model, lora_config)
 
@@ -109,12 +109,13 @@ def main():
         overwrite_output_dir=True,
         num_train_epochs=3,
         per_device_train_batch_size=4,
+        gradient_accumulation_steps=2,  # Simulates larger batch sizes
         fp16=True,
         gradient_checkpointing=True,
         save_steps=500,
         save_total_limit=2,
         logging_steps=100,
-        evaluation_strategy="no",
+        eval_strategy="no",  # Evaluation strategy disabled to save memory
         weight_decay=0.01,
         learning_rate=1e-4,
     )
@@ -133,10 +134,10 @@ def main():
     model.save_pretrained(dir_path)
 
     print("Fine-tuning with LoRA complete. Model saved.")
-    temp = "test_x.csv"
-    X_test.to_csv(mydataset_path + temp, index=False)
-    temp = "test_y.csv"
-    y_test.to_csv(mydataset_path + temp, index=False)
+
+    # Save test dataset for later evaluation
+    pd.DataFrame({"Key": X_test.keys(), "Value": X_test.values()}).to_csv(mydataset_path + "/test_x.csv", index=False)
+    pd.DataFrame({"y_test": y_test}).to_csv(mydataset_path + "/test_y.csv", index=False)
 
 
 if __name__ == "__main__":
