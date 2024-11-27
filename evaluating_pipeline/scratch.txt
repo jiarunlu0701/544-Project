@@ -1,0 +1,37 @@
+Metrics for /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/few_shot_model_responses_qwen.csv:
+  Average BLEU: 0.0012894157955143587
+  Average ROUGE-1: 0.1287318413635642
+  Average ROUGE-2: 0.024073613908481676
+  Average ROUGE-L: 0.10591212611995998
+  BERTScore: {'Precision': 0.8006400465965271, 'Recall': 0.8446356654167175, 'F1': 0.8217005133628845}
+--------------------------------------------------
+Evaluating file: /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/finetune_model_responses_qwen.csv
+Some weights of RobertaModel were not initialized from the model checkpoint at roberta-large and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Metrics for /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/finetune_model_responses_qwen.csv:
+  Average BLEU: 3.631244080631231e-05
+  Average ROUGE-1: 0.030116331860932356
+  Average ROUGE-2: 0.0051141118682522056
+  Average ROUGE-L: 0.025698244014700795
+  BERTScore: {'Precision': 0.7150102257728577, 'Recall': 0.8186397552490234, 'F1': 0.7626969814300537}
+--------------------------------------------------
+Evaluating file: /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/zero_shot_model_responses_qwen_incontext.csv
+Some weights of RobertaModel were not initialized from the model checkpoint at roberta-large and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Metrics for /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/zero_shot_model_responses_qwen_incontext.csv:
+  Average BLEU: 0.00015822828186092173
+  Average ROUGE-1: 0.030906729019905318
+  Average ROUGE-2: 0.005245129564426829
+  Average ROUGE-L: 0.026876110830217414
+  BERTScore: {'Precision': 0.8148066401481628, 'Recall': 0.8033846616744995, 'F1': 0.808143675327301}
+--------------------------------------------------
+Evaluating file: /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/zero_shot_model_responses_qwen.csv
+Some weights of RobertaModel were not initialized from the model checkpoint at roberta-large and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Metrics for /Users/davidhong/Desktop/usc course/csci544/project/544-Project/evaluating_pipeline/output/zero_shot_model_responses_qwen.csv:
+  Average BLEU: 0.0004342527871020569
+  Average ROUGE-1: 0.12324293053355256
+  Average ROUGE-2: 0.0194586117278083
+  Average ROUGE-L: 0.10105478017716694
+  BERTScore: {'Precision': 0.8092106580734253, 'Recall': 0.8394157886505127, 'F1': 0.8236107230186462}
+--------------------------------------------------
