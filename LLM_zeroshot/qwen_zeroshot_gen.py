@@ -5,8 +5,10 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 from tqdm import tqdm
 from torch.cuda.amp import autocast
 
+
 # Add your project directory to the system path
 parent_str = "C:/Users/jiaru/OneDrive/Desktop/544-Project/"
+embedding_Mapping_Dir = parent_str + 'embedding_generator/misconception_mapping.csv'
 sys.path.append(parent_str)
 from data_preparer import DataPreparer
 
@@ -21,12 +23,18 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # model_path = 'EleutherAI/llemma_7b'
 model_path = "Qwen/Qwen2.5-3B-Instruct"
 file_path = parent_str + "finalDataset.csv"
-dir_path = parent_str + "evaluating_pipeline/output/zero_shot_model_responses_qwen.csv"
+dir_path = parent_str + "evaluating_pipeline/output/zero_shot_model_responses_qwen_incontext.csv"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(model_path,torch_dtype=torch.float16).to(device)
 
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
+
+
+df = pd.read_csv(embedding_Mapping_Dir)
+
+
+final_string = '; '.join(df.values.flatten().astype(str))
 # Function to create a prompt based on a row of data
 def generate_prompt(row):
     prompt = (
@@ -43,7 +51,7 @@ def generate_text_batch(prompts, max_length=512):
     for prompt in prompts:
         # Prepare the chat messages
         messages = [
-            {"role": "system", "content": "You are Qwen, created by Alibaba Cloud. Point out the mistakes directly and do not provide reasoning steps"},
+            {"role": "system", "content": "You are Qwen, created by Alibaba Cloud. Point out the mistakes directly and do not provide reasoning steps. Only generate the answers from following options: " + final_string},
             {"role": "user", "content": prompt}
         ]
         # Convert to the Qwen-compatible format
@@ -67,6 +75,7 @@ def generate_text_batch(prompts, max_length=512):
             skip_special_tokens=True
         )
         responses.append(generated_response.strip())
+        # print(final_string)
     return responses
 
 
@@ -76,7 +85,7 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = data_preparer.prepare_data()
 
     # Set batch size for processing
-    batch_size = 16  # Adjust based on your GPU’s memory capacity
+    batch_size = 8  # Adjust based on your GPU’s memory capacity
     results = []
 
     # Iterate over the test data in batches
